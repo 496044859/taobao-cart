@@ -13,7 +13,6 @@
 <pre>.
 ├── README.md           
 ├── dist               // 项目build目录
-├── package.json       // 项目配置文件
 ├── src                // 生产目录
 │   ├── css            // css目录
 │   ├── js             // 脚本目录
