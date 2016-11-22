@@ -1,0 +1,161 @@
+@gray: #ccc solid 1px;
+@orange: #f40;
+@dark-gray: #3c3c3c;
+.input-check { margin: 0 10px 0 20px;}
+.price-font { color: #3c3c3c; font-family: Verdana,Tahoma,arial; font-weight: bold;}
+.clearfix:after { content: "."; display: block;  clear: both; visibility: hidden; height: 0;}
+.clearfix { clear: both; *display: inline-block;}
+.container {
+    margin: 0 auto;
+    width: 990px;
+    font-size: 12px;
+    th {
+        border-bottom: @gray;
+        padding: 20px 0;
+        input[type="checkbox"] {
+            .input-check;
+        }
+        label { cursor: pointer;}
+    }
+    tbody tr {
+        border-right: @gray;
+        border-left: @gray;
+        background-color: #fcfcfc;
+        &.on { background-color: #fff8e1;}
+        td {
+            border-bottom: @gray;
+            border-top: none;
+            padding: 20px 0;
+            vertical-align: top;
+            input[type="checkbox"] {
+                .input-check;
+            }
+            &.item-box img { float: left; margin-right: 10px;}
+            &.item-box .item-name {
+                overflow: hidden;
+                float: left;
+                width: 220px;
+                a {
+                    color: @dark-gray;
+                    text-decoration: none;
+                    &:hover { color: @orange; text-decoration: underline;}
+                }
+            }
+            &.price { .price-font}
+            &.num .conut-box {
+                position: relative;
+                span { position: absolute; top: 0; border: 1px solid #e5e5e5; height: 22px; width: 17px; background: #f0f0f0; text-align: center; line-height: 22px; color: #444; cursor: pointer;}
+                .reduce { left: 0;}
+                .count { position: absolute; left: 19px; top: 0; padding: 4px 0; width: 39px; height: 14px; line-height: 14px; border: 1px solid #aaa; color: #343434; text-align: center;}
+                .add { left: 60px;}
+            }
+            &.item-total { .price-font; color: @orange;}
+            a.del {
+                color: @dark-gray;
+                text-decoration: none;
+                &:hover { color: @orange; text-decoration: underline;}
+            }
+        }
+    }
+    
+    .footer {
+        position: relative;
+        margin-top: 20px;
+        width: 990px;
+        height: 50px;
+        background-color: #e5e5e5;
+        .left{
+            float: left;
+            margin-top: 18px;
+            height: 100%;
+            label { cursor: pointer;}
+            input[type="checkbox"] {
+                .input-check;
+            }
+            a#delSel {
+                padding: 0 20px;
+                color: @dark-gray;
+                text-decoration: none;
+                &:hover { color: @orange; text-decoration: underline;}
+            }
+        }
+        .right {
+            float: right;
+            height: 100%;
+            div {
+                display: inline-block;
+                *display: inline;
+                zoom: 1;
+                &.selected {
+                    cursor: pointer;
+                    em { padding: 0 5px; font-family: tohoma, arial; color: @orange; font-size: 18px; font-weight: bold;}
+                    .arrow {
+                        display: inline-block;
+                        width: 5px;
+                        height: 6px;
+                        background-position: 0 -115px;
+                        margin: 21px 10px 0 6px;
+                        background: url(https://img.alicdn.com/tps/TB1PsW9LFXXXXaXXVXXXXXXXXXX-800-600.png) no-repeat;
+                        background-position: 0 -115px;
+                        &.down { background-position: 0 -125px;}
+                    }
+                }
+                &#total {
+                    span { font-family: verdana; color: @orange; font-size: 14px;}
+                    em{ font-family: tohoma, arial; color: @orange; font-size: 22px; font-weight: bold;}
+                }
+                &.pay {
+                    width: 120px;
+                    height: 100%;
+                    line-height: 50px;
+                    background: #B0B0B0;
+                    color: #fff;
+                    font-weight: 'Lantinghei SC','Microsoft Yahei';
+                    font-size: 20px;
+                    text-align: center;
+                    vertical-align: middle;
+                    letter-spacing: 5px;
+                    cursor: default;
+                    &.active { background-color: @orange; cursor: pointer;}
+                }
+            }
+        }
+        #popup {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: -100px;
+            border: @orange solid 1px;
+            padding: 10px 0; width: 100%;
+            background-color: #fff;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            .item-list {
+                overflow: hidden;
+                width: 80%;
+                margin: 0 auto;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    *display: inline;
+                    zoom: 1;
+                    margin: 0 14px;
+                    img { vertical-align: middle;}
+                    a {
+                        display: none;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        padding: 2px;
+                        color: #fff;
+                        background: rgba(0,0,0,.6);
+                        cursor: pointer;
+                    }
+                    &:hover a { display: block;}
+                }
+            }
+            .arrow { position: absolute; bottom: -14px; right: 46px; margin-left: -4px; width: 13px; height: 14px; background: url(https://img.alicdn.com/tps/TB1R58eKpXXXXcmXFXXXXXXXXXX-13-7.png) no-repeat;}
+        }
+    }
+}

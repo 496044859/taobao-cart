@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>淘宝购物车</title>
+		<!-- build:css css/style.min.js -->
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet/less" type="text/css" href="less/style.less" />
+		<!-- endbuild -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<table id="box" width="989" border="0" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr>
+						<th width="10%"><input class="check-all" id="check-all1" type="checkbox" /><label for="check-all1">全选</label></th>
+						<th width="35%">商品</th>
+						<th width="15%">单价</th>
+						<th width="15%">数量</th>
+						<th width="15%">小计</th>
+						<th width="10%">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div class="footer clearfix">
+				<div class="left">
+					<input class="check-all" id="check-all2" type="checkbox" />
+					<label for="check-all2">全选</label>
+					<a id="delSel" href="javascript:;">删除</a>
+				</div>
+				<div class="right">
+					<div id="selected" class="selected">
+						<span>已选商品<em>0</em>件</span>
+						<span class="arrow"></span>
+					</div>
+					<div id="total">合计（不含运费）：<span>￥</span><em>0.00</em></div>
+					<div id="pay" class="pay">结算</div>
+				</div>
+				<div id="popup" style="display: none">
+					<div id="item-list" class="item-list">
+						<ul>
+						</ul>
+					</div>
+					<span class="prev"></span>
+					<span class="next"></span>
+					<span class="arrow"></span>
+				</div>
+			</div>
+		</div>
+		<!-- build:js js/main.min.js -->
+		<script src="js/data.js"></script>
+		<script src="js/main.js"></script>
+		<!-- endbuild -->
+	</body>
+</html>

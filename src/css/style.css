@@ -1,0 +1,255 @@
+.input-check {
+  margin: 0 10px 0 20px;
+}
+.price-font {
+  color: #3c3c3c;
+  font-family: Verdana,Tahoma,arial;
+  font-weight: bold;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
+  clear: both;
+  *display: inline-block;
+}
+.container {
+  margin: 0 auto;
+  width: 990px;
+  font-size: 12px;
+}
+.container th {
+  border-bottom: #ccc solid 1px;
+  padding: 20px 0;
+}
+.container th input[type="checkbox"] {
+  margin: 0 10px 0 20px;
+}
+.container th label {
+  cursor: pointer;
+}
+.container tbody tr {
+  border-right: #ccc solid 1px;
+  border-left: #ccc solid 1px;
+  background-color: #fcfcfc;
+}
+.container tbody tr.on {
+  background-color: #fff8e1;
+}
+.container tbody tr td {
+  border-bottom: #ccc solid 1px;
+  border-top: none;
+  padding: 20px 0;
+  vertical-align: top;
+}
+.container tbody tr td input[type="checkbox"] {
+  margin: 0 10px 0 20px;
+}
+.container tbody tr td.item-box img {
+  float: left;
+  margin-right: 10px;
+}
+.container tbody tr td.item-box .item-name {
+  overflow: hidden;
+  float: left;
+  width: 220px;
+}
+.container tbody tr td.item-box .item-name a {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+.container tbody tr td.item-box .item-name a:hover {
+  color: #f40;
+  text-decoration: underline;
+}
+.container tbody tr td.price {
+  color: #3c3c3c;
+  font-family: Verdana,Tahoma,arial;
+  font-weight: bold;
+}
+.container tbody tr td.num .conut-box {
+  position: relative;
+}
+.container tbody tr td.num .conut-box span {
+  position: absolute;
+  top: 0;
+  border: 1px solid #e5e5e5;
+  height: 22px;
+  width: 17px;
+  background: #f0f0f0;
+  text-align: center;
+  line-height: 22px;
+  color: #444;
+  cursor: pointer;
+}
+.container tbody tr td.num .conut-box .reduce {
+  left: 0;
+}
+.container tbody tr td.num .conut-box .count {
+  position: absolute;
+  left: 19px;
+  top: 0;
+  padding: 4px 0;
+  width: 39px;
+  height: 14px;
+  line-height: 14px;
+  border: 1px solid #aaa;
+  color: #343434;
+  text-align: center;
+}
+.container tbody tr td.num .conut-box .add {
+  left: 60px;
+}
+.container tbody tr td.item-total {
+  color: #3c3c3c;
+  font-family: Verdana,Tahoma,arial;
+  font-weight: bold;
+  color: #f40;
+}
+.container tbody tr td a.del {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+.container tbody tr td a.del:hover {
+  color: #f40;
+  text-decoration: underline;
+}
+.container .footer {
+  position: relative;
+  margin-top: 20px;
+  width: 990px;
+  height: 50px;
+  background-color: #e5e5e5;
+}
+.container .footer .left {
+  float: left;
+  margin-top: 18px;
+  height: 100%;
+}
+.container .footer .left label {
+  cursor: pointer;
+}
+.container .footer .left input[type="checkbox"] {
+  margin: 0 10px 0 20px;
+}
+.container .footer .left a#delSel {
+  padding: 0 20px;
+  color: #3c3c3c;
+  text-decoration: none;
+}
+.container .footer .left a#delSel:hover {
+  color: #f40;
+  text-decoration: underline;
+}
+.container .footer .right {
+  float: right;
+  height: 100%;
+}
+.container .footer .right div {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+.container .footer .right div.selected {
+  cursor: pointer;
+}
+.container .footer .right div.selected em {
+  padding: 0 5px;
+  font-family: tohoma, arial;
+  color: #f40;
+  font-size: 18px;
+  font-weight: bold;
+}
+.container .footer .right div.selected .arrow {
+  display: inline-block;
+  width: 5px;
+  height: 6px;
+  margin: 21px 10px 0 6px;
+  background: url(https://img.alicdn.com/tps/TB1PsW9LFXXXXaXXVXXXXXXXXXX-800-600.png) no-repeat;
+  background-position: 0 -115px;
+}
+.container .footer .right div.selected .arrow.down {
+  background-position: 0 -125px;
+}
+.container .footer .right div#total span {
+  font-family: verdana;
+  color: #f40;
+  font-size: 14px;
+}
+.container .footer .right div#total em {
+  font-family: tohoma, arial;
+  color: #f40;
+  font-size: 22px;
+  font-weight: bold;
+}
+.container .footer .right div.pay {
+  width: 120px;
+  height: 100%;
+  line-height: 50px;
+  background: #B0B0B0;
+  color: #fff;
+  font-weight: 'Lantinghei SC', 'Microsoft Yahei';
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 5px;
+  cursor: default;
+}
+.container .footer .right div.pay.active {
+  background-color: #f40;
+  cursor: pointer;
+}
+.container .footer #popup {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: -100px;
+  border: #f40 solid 1px;
+  padding: 10px 0;
+  width: 100%;
+  background-color: #fff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.container .footer #popup .item-list {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+.container .footer #popup .item-list li {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin: 0 14px;
+}
+.container .footer #popup .item-list li img {
+  vertical-align: middle;
+}
+.container .footer #popup .item-list li a {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+.container .footer #popup .item-list li:hover a {
+  display: block;
+}
+.container .footer #popup .arrow {
+  position: absolute;
+  bottom: -14px;
+  right: 46px;
+  margin-left: -4px;
+  width: 13px;
+  height: 14px;
+  background: url(https://img.alicdn.com/tps/TB1R58eKpXXXXcmXFXXXXXXXXXX-13-7.png) no-repeat;
+}

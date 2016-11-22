@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet/less" type="text/css" href="less/style.less" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+		<!--<style type="text/css">
+		#box table { border-collapse:collapse; }
+		#box th,
+		#box td { border:#ccc solid 1px; padding: 10px;}
+		#box td { height: 80px; text-align: center;}
+		#box .num span { display: inline-block; border: solid 1px #CCCCCC; width: 25px; height: 16px; cursor: pointer;}
+		.footer { position: relative; width: 990px;}
+		.footer .left { float: left;}
+		.footer .right { float: right;}
+		.footer .right div { display: inline-block; *display: inline; zoom: 1;}
+		.footer #popup { display: none; position: absolute; left: 0; top: -100px; border: #ccc solid 1px; padding: 10px 0; width: 100%; background-color: #fff; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+		.footer .item-list { overflow: hidden; width: 80%; margin: 0 auto;}
+		.footer #popup li { position: relative; display: inline-block; *display: inline; zoom: 1;}
+		.footer #popup li img { vertical-align: middle;}
+		.footer #popup li a { display: none; position: absolute; right: 0; top: 0;}
+		.footer #popup li:hover a { display: block;}
+		</style>-->
+
+	</head>
+	<body>
+		<div class="container">
+			<table id="box" width="100%" border="0" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr>
+						<th width="10%"><input class="check-all" id="check-all1" type="checkbox" /><label for="check-all1">全选</label></th>
+						<th width="35%">商品</th>
+						<th width="15%">单价</th>
+						<th width="15%">数量</th>
+						<th width="15%">小计</th>
+						<th width="10%">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input class="check-one" type="checkbox" /></td>
+						<td class="item-box">
+							<img src="https://img.alicdn.com/bao/uploaded/i4/2096579128/TB29gaVbMhJc1FjSZFDXXbvnFXa_!!2096579128.jpg_80x80.jpg" />
+							<span class="item-name">
+								<a href="javascript:;">卡西欧 EX-TR350</a>
+							</span>
+						</td>
+						<td class="price">5999.88</td>
+						<td class="num">
+							<div class="conut-box">
+								<span class="reduce"></span><input class="count" type="text" value="1" maxlength="3" /><span class="add">+</span>
+								
+							</div>
+						</td>
+						<td class="item-total">5999.88</td>
+						<td><a class="del" href="javasript:;">删除</a></td>
+					</tr>
+					<tr>
+						<td><input class="check-one" type="checkbox" /></td>
+						<td class="item-box">
+							<img src="https://img.alicdn.com/bao/uploaded/i4/2096579128/TB29gaVbMhJc1FjSZFDXXbvnFXa_!!2096579128.jpg_80x80.jpg" />
+							<span class="item-name">
+								<a href="javascript:;">卡西欧 EX-TR350</a>
+							</span>
+						</td>
+						<td class="price">5999.88</td>
+						<td class="num">
+							<div class="conut-box">
+								<span class="reduce"></span><input class="count" type="text" value="1" maxlength="3" /><span class="add">+</span>
+								
+							</div>
+						</td>
+						<td class="item-total">5999.88</td>
+						<td><a class="del" href="javasript:;">删除</a></td>
+					</tr>
+					<tr>
+						<td><input class="check-one" type="checkbox" /></td>
+						<td class="item-box">
+							<img src="https://img.alicdn.com/bao/uploaded/i4/2096579128/TB29gaVbMhJc1FjSZFDXXbvnFXa_!!2096579128.jpg_80x80.jpg" />
+							<span class="item-name">
+								<a href="javascript:;">卡西欧 EX-TR350</a>
+							</span>
+						</td>
+						<td class="price">5999.88</td>
+						<td class="num">
+							<div class="conut-box">
+								<span class="reduce"></span><input class="count" type="text" value="1" maxlength="3" /><span class="add">+</span>
+								
+							</div>
+						</td>
+						<td class="item-total">5999.88</td>
+						<td><a class="del" href="javasript:;">删除</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="footer clearfix">
+				<div class="left">
+					<input class="check-all" id="check-all2" type="checkbox" />
+					<label for="check-all2">全选</label>
+					<a id="delSel" href="javascript:;">删除</a>
+				</div>
+				<div class="right">
+					<div class="selected">
+						<span>已选商品<em>0</em>件</span>
+						<span class="arrow"></span>
+					</div>
+					<div id="total">合计（不含运费）：<span>￥</span><em>0.00</em></div>
+					<div class="pay">结算</div>
+				</div>
+				<div id="popup" style="display: none">
+					<div class="item-list">
+						<ul>
+							<!--<li><img src="https://img.alicdn.com/bao/uploaded/i4/2096579128/TB29gaVbMhJc1FjSZFDXXbvnFXa_!!2096579128.jpg_80x80.jpg" /><a href="javascript:;">取消选择</a></li>-->
+						</ul>
+					</div>
+					<span class="prev"></span>
+					<span class="next"></span>
+					<span class="arrow"></span>
+				</div>
+			</div>
+			
+		</div>
+		
+		<script>
+			if (!document.getElementsByClassName) {
+		        document.getElementsByClassName = function (cls) {
+		            var ret = [];
+		            var els = document.getElementsByTagName('*');
+		            for (var i = 0, len = els.length; i < len; i++) {
+		
+		                if (els[i].className.indexOf(cls + ' ') >=0 || els[i].className.indexOf(' ' + cls + ' ') >=0 || els[i].className.indexOf(' ' + cls) >=0) {
+		                    ret.push(els[i]);
+		                }
+		            }
+		            return ret;
+		        }
+		   };
+			var oBox = document.getElementById('box');
+			var oCheckAll = document.getElementsByClassName('check-all');
+			var subCheck = document.getElementsByClassName('check-one');
+			var aCheck = document.getElementsByClassName('check');
+			var itemTotal = document.getElementsByClassName('item-total');
+			var oSelected = document.getElementsByClassName('selected')[0];
+			var selectedNum = oSelected.getElementsByTagName('em')[0];
+			var oArrow = oSelected.getElementsByTagName('span')[1];
+			var itemList = document.getElementsByClassName('item-list')[0].getElementsByTagName('ul')[0];
+			var total = document.getElementById('total');
+			var oPop = document.getElementById('popup');
+			var tr = oBox.children[1].rows;
+			var Odel = document.getElementById('delSel');
+			var oPay= document.getElementsByClassName('pay')[0];
+			var pattern = /[`~!@#\$%\^\&\*\(\)_\+<>\?:"\{\},\￥\\\/;'\[\]]/im;
+			
+			for(var i=0; i<oCheckAll.length; i++){
+				oCheckAll[i].onclick = function(){
+					for(var j=0; j<subCheck.length; j++){
+						subCheck[j].checked = this.checked;
+					}
+					for(var k=0; k<oCheckAll.length; k++){
+						oCheckAll[k].checked = this.checked;
+					}
+					getItemTotal();
+					if(selectedNum.innerHTML != 0){
+						oPay.className = "pay active";
+					}
+					else{
+						oPay.className = "pay";
+					};
+				}
+			};
+			for(var i=0; i<subCheck.length; i++){
+				subCheck[i].onclick = function(){
+					var count = 0;
+					for(var j=0; j<subCheck.length; j++){
+						if(subCheck[j].checked){
+							count++;
+						}
+					}
+					if(count == subCheck.length){
+						for(var k=0; k<oCheckAll.length; k++){
+							oCheckAll[k].checked = true;
+						}
+					}
+					else{
+						for(var k=0; k<oCheckAll.length; k++){
+							oCheckAll[k].checked = false;
+						}
+					}
+					getItemTotal();
+					if(selectedNum.innerHTML != 0){
+						oPay.className = "pay active";
+					}
+					else{
+						oPay.className = "pay";
+					};
+				}
+			};
+			
+			oSelected.onclick = function(){
+				if(oPop.style.display == "none"){
+					if(selectedNum.innerHTML != 0){
+						oPop.style.display = "block";
+						oArrow.className = "arrow down";
+					}
+				}else{
+					oPop.style.display = "none";
+					oArrow.className = "arrow";
+				};
+			};
+			
+			itemList.onclick = function(ev){
+				var oEvent = ev || event;
+				var oSrc = oEvent.srcElement || oEvent.target;
+				if(oSrc.tagName == "A"){
+					var index = oSrc.getAttribute('index');
+					var check = tr[index].getElementsByTagName('input')[0];
+					check.checked = false;
+					check.onclick();
+				};
+			};
+			
+			for(var i=0; i<tr.length; i++){
+				tr[i].onclick = function(ev){
+					var oEvent = ev || event;
+					var oSrc = oEvent.srcElement || oEvent.target;
+					var cls = oSrc.className;
+					var input = this.getElementsByTagName('input')[1];
+					var val = parseInt(input.value);
+					var reduce = this.getElementsByClassName('reduce')[0];
+					switch(cls){
+						case 'add':
+							input.value = val + 1;
+							reduce.innerHTML = "-";
+							getSubTotal(this);
+							break;
+						case 'reduce':
+							if(input.value > 1){
+								input.value = val - 1;
+							};
+							if(input.value <= 1){
+								reduce.innerHTML = "";
+							};
+							getSubTotal(this);
+							break;
+						case 'del':
+							var conf = window.confirm('确认删除吗？');
+							if(conf){
+								this.parentNode.removeChild(this);
+							};
+							break;
+						default:
+							break;
+					};
+					getItemTotal();
+				};
+				
+				tr[i].getElementsByTagName('input')[1].onkeyup = function(){
+					var val = parseInt(this.value);
+					var tr = this.parentNode.parentNode.parentNode;
+					var reduce = tr.getElementsByClassName('reduce')[0];
+					if(isNaN(val) || val < 1){
+						val = 1;
+					};
+					this.value = val;
+					if(val <= 1){
+						reduce.innerHTML = '';
+					}
+					else{
+						reduce.innerHTML = '-';
+					}
+					getSubTotal(this.parentNode.parentNode.parentNode);
+					getItemTotal();
+				}
+			};
+			
+			function getItemTotal(){
+				var selected = 0;
+				var price = 0;
+				var itemStr = '';				for(var i=0; i<tr.length; i++){
+					if(tr[i].getElementsByTagName('input')[0].checked){
+						selected += parseInt(tr[i].getElementsByTagName('input')[1].value);
+						price += parseFloat(tr[i].cells[4].innerHTML);
+						itemStr += '<li><img src="'+ tr[i].getElementsByTagName('img')[0].src +'" /><a index="'+i+'">取消选择</a></li>';
+					}
+				}
+				if(selected == 0){
+					oPop.style.display = "none";
+				}
+				selectedNum.innerHTML = selected;
+				total.innerHTML = "合计（不含运费）：<span>￥</span><em>" + price.toFixed(2) + "</em>";
+				itemList.innerHTML = itemStr;
+			};
+			
+			function getSubTotal(tr){
+				var aTd = tr.cells;
+				var input = tr.getElementsByTagName('input')[1];
+				var price = parseFloat(aTd[2].innerHTML);
+				var count = parseInt(input.value); 
+				var subTotal = parseFloat(price * count).toFixed(2);
+				aTd[4].innerHTML = subTotal;
+			};
+			
+			Odel.onclick = function(){
+				//var input = tr.getElementsByTagName('input')[0];
+				if(selectedNum.innerHTML != "0"){
+					var conf = window.confirm('确认删除吗？');
+					if(conf){
+						for(var i=0; i<tr.length; i++){
+							var input = tr[i].getElementsByTagName('input')[0];
+							if(input.checked){
+								tr[i].parentNode.removeChild(tr[i]);
+								i--;
+							};
+						};
+						selectedNum.innerHTML = 0;
+						total.innerHTML = 0;
+					};
+				};
+			};
+		</script>
+	</body>
+</html>
